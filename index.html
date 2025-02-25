@@ -15,7 +15,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: #f4f4f9;
+            background-color: #ffffff; /* Белый цвет фона */
         }
         .container {
             position: relative;
@@ -67,15 +67,14 @@
             height: 300px;
             position: absolute;
             bottom: 10%;
-            left: calc(50% - 150px); /* Центровка видео по горизонтали */
-            animation: moveVideo 3s infinite alternate;
+            animation: moveVideo 5s infinite alternate;
         }
         @keyframes moveVideo {
             0% {
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(300px);
+                transform: translateX(calc(100vw - 300px)); /* Движение на всю ширину экрана минус ширина видео */
             }
         }
     </style>
