@@ -66,25 +66,46 @@
             width: 300px;
             height: 300px;
             position: absolute;
-            bottom: 10%;
-            animation: moveVideo 5s infinite alternate;
+            bottom: 20%;
+            transform-origin: center;
+            animation: moveInfinity 10s infinite linear;
             cursor: pointer; /* Курсор указывает, что видео кликабельно */
         }
-        @keyframes moveVideo {
+        @keyframes moveInfinity {
             0% {
-                transform: translateX(0);
+                transform: translateX(0) translateY(0) rotateY(0deg);
+            }
+            12.5% {
+                transform: translateX(calc(50vw - 150px)) translateY(calc(-30vh + 150px)) rotateY(0deg); /* Движение вправо вверх */
+            }
+            25% {
+                transform: translateX(calc(100vw - 300px)) translateY(0) rotateY(180deg); /* Правый край, разворот */
+            }
+            37.5% {
+                transform: translateX(calc(50vw - 150px)) translateY(calc(30vh - 150px)) rotateY(180deg); /* Движение влево вниз */
+            }
+            50% {
+                transform: translateX(0px) translateY(0) rotateY(0deg); /* Левый край, разворот в исходное */
+            }
+            62.5% {
+                transform: translateX(calc(50vw - 150px)) translateY(calc(30vh - 150px)) rotateY(0deg); /* Движение вправо вниз */
+            }
+            75% {
+                transform: translateX(calc(100vw - 300px)) translateY(0) rotateY(180deg); /* Правый край, разворот */
+            }
+            87.5% {
+                transform: translateX(calc(50vw - 150px)) translateY(calc(-30vh + 150px)) rotateY(180deg); /* Движение влево вверх */
             }
             100% {
-                transform: translateX(calc(100vw - 300px)); /* Движение на всю ширину экрана минус ширина видео */
+                transform: translateX(0px) translateY(0) rotateY(0deg); /* Начальная позиция */
             }
         }
     </style>
     <script>
-        // Пример скрипта
         console.log('Скрипт загружен');
 
         function showAlert() {
-            alert('По голове себе постучм!');
+            alert('По голове себе постучи!');
         }
     </script>
     <!-- Скрипт для внедрения виджета Chatbro -->
