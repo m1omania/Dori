@@ -71,29 +71,29 @@
         }
         @keyframes moveInfinity {
             0% {
-                transform: translateX(-300px) translateY(0) rotateY(0deg); /* Полностью за левым краем */
+                transform: translateX(-300px) rotateY(0deg); /* Полностью за левым краем */
                 visibility: hidden;
             }
-            12.5% {
-                transform: translateX(0) translateY(0) rotateY(0deg); /* Входит влево в кадр */
+            10% {
+                transform: translateX(0) rotateY(0deg); /* Въезд в кадр слева */
                 visibility: visible;
             }
-            37.5% {
-                transform: translateX(calc(100vw - 300px)) translateY(0) rotateY(0deg); /* Достигает правого края */
+            40% {
+                transform: translateX(calc(100vw - 300px)) rotateY(0deg); /* Достиг правого края */
             }
             50% {
-                transform: translateX(calc(100vw)) translateY(0) rotateY(180deg); /* Полностью за правым краем, разворот */
+                transform: translateX(calc(100vw + 300px)) rotateY(180deg); /* Полностью за правым краем, разворот */
                 visibility: hidden;
             }
-            62.5% {
-                transform: translateX(calc(100vw - 300px)) translateY(0) rotateY(180deg); /* Входит справа в кадр */
+            60% {
+                transform: translateX(calc(100vw - 300px)) rotateY(180deg); /* Входит справа в кадр */
                 visibility: visible;
             }
-            87.5% {
-                transform: translateX(0) translateY(0) rotateY(180deg); /* Достигает левого края */
+            90% {
+                transform: translateX(0) rotateY(180deg); /* Добрался до левого края */
             }
             100% {
-                transform: translateX(-300px) translateY(0) rotateY(0deg); /* Полностью за левым краем, разворот */
+                transform: translateX(-300px) rotateY(0deg); /* Полностью выпал за левым краем */
                 visibility: hidden;
             }
         }
