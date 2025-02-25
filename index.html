@@ -3,148 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Телеграм-бот для заметок</title>
+    <title>Видео Анимация</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             height: 100vh;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             background-color: #ffffff; /* Белый цвет фона */
-        }
-        .container {
-            position: relative;
             display: flex;
-            width: 100%;
-            height: 100%;
             justify-content: center;
             align-items: center;
-        }
-        .text-area {
-            position: absolute;
-            top: 10%;
-            left: 5%;
-            max-width: 300px;
-            z-index: 10;
-            padding: 20px;
-        }
-        .chat {
-            position: absolute;
-            top: 10%;
-            right: 5%;
-            z-index: 10;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #5359ea;
-            font-size: 4rem; /* Размер шрифта увеличен в два раза */
-            line-height: 1.2;
-            margin: 0;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4a56e2;
-            color: #fff;
-            text-align: center;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1rem;
-            margin-top: 10px;
         }
         video {
             width: 300px;
             height: 300px;
             position: absolute;
-            bottom: 20%;
-            transform-origin: center;
             animation: moveInfinity 10s infinite linear;
             cursor: pointer; /* Курсор указывает, что видео кликабельно */
         }
         @keyframes moveInfinity {
             0% {
-                transform: translateX(-300px) rotateY(0deg); /* Полностью за левым краем */
+                transform: translateX(-350px) rotateY(0deg); /* Полностью за левым краем */
                 visibility: hidden;
             }
             10% {
-                transform: translateX(0) rotateY(0deg); /* Въезд в кадр слева */
-                visibility: visible;
+                transform: translateX(-25px) rotateY(0deg); /* Входит в кадр слева */
+                visibility: visible; 
             }
             40% {
-                transform: translateX(calc(100vw - 300px)) rotateY(0deg); /* Достиг правого края */
+                transform: translateX(calc(100vw - 325px)) rotateY(0deg); /* Достиг правого края */
+                visibility: visible;
             }
             50% {
-                transform: translateX(calc(100vw + 300px)) rotateY(180deg); /* Полностью за правым краем, разворот */
+                transform: translateX(calc(100vw)) rotateY(180deg); /* Полностью за правым краем, разворот */
                 visibility: hidden;
             }
             60% {
-                transform: translateX(calc(100vw - 300px)) rotateY(180deg); /* Входит справа в кадр */
+                transform: translateX(calc(100vw - 325px)) rotateY(180deg); /* Входит справа в кадр */
                 visibility: visible;
             }
             90% {
-                transform: translateX(0) rotateY(180deg); /* Добрался до левого края */
+                transform: translateX(-25px) rotateY(180deg); /* Добрался до левого края */
+                visibility: visible;
             }
             100% {
-                transform: translateX(-300px) rotateY(0deg); /* Полностью выпал за левым краем */
+                transform: translateX(-350px) rotateY(0deg); /* Полностью скрылся за левым краем */
                 visibility: hidden;
             }
         }
     </style>
     <script>
-        console.log('Скрипт загружен');
-
         function showAlert() {
             alert('Вы кликнули на видео!');
         }
     </script>
-    <!-- Скрипт для внедрения виджета Chatbro -->
-    <script id="chatBroEmbedCode">
-        /* Chatbro Widget Embed Code Start */
-        function ChatbroLoader(chats, async) {
-            async = !1 !== async;
-            var params = {
-                embedChatsParameters: chats instanceof Array ? chats : [chats],
-                lang: navigator.language || navigator.userLanguage,
-                needLoadCode: 'undefined' == typeof Chatbro,
-                embedParamsVersion: localStorage.embedParamsVersion,
-                chatbroScriptVersion: localStorage.chatbroScriptVersion
-            },
-            xhr = new XMLHttpRequest;
-            xhr.withCredentials = !0;
-            xhr.onload = function() {
-                eval(xhr.responseText)
-            };
-            xhr.onerror = function() {
-                console.error('Chatbro loading error')
-            };
-            xhr.open('GET', 'https://www.chatbro.com/embed.js?' + btoa(unescape(encodeURIComponent(JSON.stringify(params)))), async);
-            xhr.send();
-        }
-        /* Chatbro Widget Embed Code End */
-        ChatbroLoader({ encodedChatId: '491ds' });
-    </script>
 </head>
 <body>
-    <div class="container">
-        <div class="text-area">
-            <h1>Телеграм-бот для людей с памятью как у рыбки</h1>
-            <a href="#" class="btn">Скачать</a>
-        </div>
-        <div class="chat">
-            <!-- Здесь будет виджет чата -->
-        </div>
-        <video autoplay muted loop onclick="showAlert()">
-            <source src="Dori.mp4" type="video/mp4">
-            Ваш браузер не поддерживает видео-теги.
-        </video>
-    </div>
+    <video autoplay muted loop onclick="showAlert()">
+        <source src="Dori.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео-теги.
+    </video>
 </body>
 </html>
