@@ -63,13 +63,23 @@
             margin-top: 10px;
         }
         video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            bottom: 10%;
+            left: calc(50% - 150px); /* Центровка видео по горизонтали */
+            animation: moveVideo 3s infinite alternate;
+        }
+        @keyframes moveVideo {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(300px);
+            }
         }
     </style>
     <script>
-        // Пример скрипта
         console.log('Скрипт загружен');
     </script>
     <!-- Скрипт для внедрения виджета Chatbro -->
@@ -102,13 +112,13 @@
 <body>
     <div class="container">
         <div class="text-area">
-            <h1>Телеграм-бот для заметок и напоминаний</h1>
+            <h1>Телеграм-бот для людей с памятью как у рыбки</h1>
             <a href="#" class="btn">Скачать</a>
         </div>
         <div class="chat">
             <!-- Здесь будет виджет чата -->
         </div>
-        <video width="100%" height="100%" autoplay muted loop>
+        <video autoplay muted loop>
             <source src="Dori.mp4" type="video/mp4">
             Ваш браузер не поддерживает видео-теги.
         </video>
