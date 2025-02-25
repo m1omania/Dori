@@ -71,41 +71,30 @@
         }
         @keyframes moveInfinity {
             0% {
-                transform: translateX(0) translateY(0) rotateY(0deg);
+                transform: translateX(-300px) translateY(0) rotateY(0deg); /* Полностью за левым краем */
+                visibility: hidden;
             }
             12.5% {
-                transform: translateX(calc(50vw - 150px)) translateY(calc(-30vh + 150px)) rotateY(0deg);
+                transform: translateX(0) translateY(0) rotateY(0deg); /* Входит влево в кадр */
                 visibility: visible;
-            }
-            25% {
-                transform: translateX(calc(100vw - 300px)) translateY(0);
-                visibility: hidden; /* Скрываем за правым краем */
             }
             37.5% {
-                transform: translateX(calc(50vw - 150px)) translateY(calc(30vh - 150px)) rotateY(180deg);
-                visibility: visible;
+                transform: translateX(calc(100vw - 300px)) translateY(0) rotateY(0deg); /* Достигает правого края */
             }
             50% {
-                transform: translateX(0px) translateY(0);
-                visibility: hidden; /* Скрываем за левым краем */
-                rotateY(180deg);
+                transform: translateX(calc(100vw)) translateY(0) rotateY(180deg); /* Полностью за правым краем, разворот */
+                visibility: hidden;
             }
             62.5% {
-                transform: translateX(calc(50vw - 150px)) translateY(calc(30vh - 150px)) rotateY(0deg);
+                transform: translateX(calc(100vw - 300px)) translateY(0) rotateY(180deg); /* Входит справа в кадр */
                 visibility: visible;
-            }
-            75% {
-                transform: translateX(calc(100vw - 300px)) translateY(0);
-                visibility: hidden; /* Скрываем за правым краем */
             }
             87.5% {
-                transform: translateX(calc(50vw - 150px)) translateY(calc(-30vh + 150px)) rotateY(180deg);
-                visibility: visible;
+                transform: translateX(0) translateY(0) rotateY(180deg); /* Достигает левого края */
             }
             100% {
-                transform: translateX(0px) translateY(0);
-                visibility: hidden; /* Скрываем за левым краем */
-                rotateY(0deg);
+                transform: translateX(-300px) translateY(0) rotateY(0deg); /* Полностью за левым краем, разворот */
+                visibility: hidden;
             }
         }
     </style>
