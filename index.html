@@ -45,7 +45,6 @@
         }
         h1 {
             color: #5359ea;
-            font-size: 4rem; /* Размер шрифта увеличен в два раза */
             line-height: 1.2;
             margin: 0;
         }
@@ -98,6 +97,20 @@
             100% {
                 transform: translateX(-350px) rotateY(0deg); /* Полностью скрылся за левым краем */
                 visibility: hidden;
+            }
+        }
+
+        /* Стиль для десктопных устройств */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 64px; /* Для десктопа */
+            }
+        }
+
+        /* Стиль для мобильных устройств */
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 40px; /* Для мобильных */
             }
         }
     </style>
