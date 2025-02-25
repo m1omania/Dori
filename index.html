@@ -31,10 +31,7 @@
             left: 5%;
             max-width: 300px;
             z-index: 10;
-            background: rgba(255, 255, 255, 0.8);
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .chat {
             position: absolute;
@@ -48,8 +45,9 @@
         }
         h1 {
             color: #5359ea;
-            font-size: 2rem;
+            font-size: 4rem; /* Размер шрифта увеличен в два раза */
             line-height: 1.2;
+            margin: 0;
         }
         .btn {
             display: inline-block;
@@ -76,28 +74,38 @@
                 transform: translateX(0) translateY(0) rotateY(0deg);
             }
             12.5% {
-                transform: translateX(calc(50vw - 150px)) translateY(calc(-30vh + 150px)) rotateY(0deg); /* Движение вправо вверх */
+                transform: translateX(calc(50vw - 150px)) translateY(calc(-30vh + 150px)) rotateY(0deg);
+                visibility: visible;
             }
             25% {
-                transform: translateX(calc(100vw - 300px)) translateY(0) rotateY(180deg); /* Правый край, разворот */
+                transform: translateX(calc(100vw - 300px)) translateY(0);
+                visibility: hidden; /* Скрываем за правым краем */
             }
             37.5% {
-                transform: translateX(calc(50vw - 150px)) translateY(calc(30vh - 150px)) rotateY(180deg); /* Движение влево вниз */
+                transform: translateX(calc(50vw - 150px)) translateY(calc(30vh - 150px)) rotateY(180deg);
+                visibility: visible;
             }
             50% {
-                transform: translateX(0px) translateY(0) rotateY(0deg); /* Левый край, разворот в исходное */
+                transform: translateX(0px) translateY(0);
+                visibility: hidden; /* Скрываем за левым краем */
+                rotateY(180deg);
             }
             62.5% {
-                transform: translateX(calc(50vw - 150px)) translateY(calc(30vh - 150px)) rotateY(0deg); /* Движение вправо вниз */
+                transform: translateX(calc(50vw - 150px)) translateY(calc(30vh - 150px)) rotateY(0deg);
+                visibility: visible;
             }
             75% {
-                transform: translateX(calc(100vw - 300px)) translateY(0) rotateY(180deg); /* Правый край, разворот */
+                transform: translateX(calc(100vw - 300px)) translateY(0);
+                visibility: hidden; /* Скрываем за правым краем */
             }
             87.5% {
-                transform: translateX(calc(50vw - 150px)) translateY(calc(-30vh + 150px)) rotateY(180deg); /* Движение влево вверх */
+                transform: translateX(calc(50vw - 150px)) translateY(calc(-30vh + 150px)) rotateY(180deg);
+                visibility: visible;
             }
             100% {
-                transform: translateX(0px) translateY(0) rotateY(0deg); /* Начальная позиция */
+                transform: translateX(0px) translateY(0);
+                visibility: hidden; /* Скрываем за левым краем */
+                rotateY(0deg);
             }
         }
     </style>
@@ -105,7 +113,7 @@
         console.log('Скрипт загружен');
 
         function showAlert() {
-            alert('По голове себе постучи!');
+            alert('Вы кликнули на видео!');
         }
     </script>
     <!-- Скрипт для внедрения виджета Chatbro -->
